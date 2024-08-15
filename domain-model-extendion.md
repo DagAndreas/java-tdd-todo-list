@@ -21,7 +21,7 @@
 
 | Class       | Variable               | Method                                | Scenario                                          | Outcome                                                                        |
 |-------------|------------------------|---------------------------------------|---------------------------------------------------|--------------------------------------------------------------------------------|
-| `TodoList`  | ArrayList\<Task> tasks |                                       |                                                   |                                                                                |
+| `TodoList`  | HashMap<Integer, Task> |                                       |                                                   |                                                                                |
 |             |                        | `addTask(String task)`                | user wants to add a task                          | task is added to tasks list                                                    |
 |             |                        | `removeTask(String task)`             | user wants to remove task                         | task is removed from list                                                      |
 |             |                        | `seeAllTasks()`                       | user wants to see all tasks                       | all tasks are printed to console                                               |
