@@ -117,7 +117,7 @@ public class TestTodoList {
         td.addTask(5, "e");
 
         ArrayList<Task> expectedOrder = new ArrayList<>();
-        String[] order = {"x", "g", "d", "b", "e", "a" };
+        String[] order = {"x", "g", "e", "d", "b", "a" };
         for (String s: order){
             expectedOrder.add(new Task(s));
         }
