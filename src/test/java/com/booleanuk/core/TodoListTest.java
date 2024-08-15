@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import javafx.util.Pair;
 
+import java.util.ArrayList;
+
 
 class TodoListTest {
 
@@ -66,7 +68,7 @@ class TodoListTest {
     }
 
     @Test
-    public void checkRemoveTask(){
+    public void testRemoveTask(){
         TodoList todolist = getTestingTodolist();
 
         Assertions.assertTrue(todolist.checkTaskExists("Buy groceries"));
@@ -76,6 +78,18 @@ class TodoListTest {
 
     }
 
+    @Test
+    public void testSeeAllTasks(){
+        TodoList todoList = getTestingTodolist();
+        ArrayList<Pair<String, Boolean>> testTasks = new ArrayList<>();
+        testTasks.add(new Pair<>("Buy groceries", false));
+        testTasks.add(new Pair<>("Take out the trash", false));
+        testTasks.add(new Pair<>("Wash car", false));
+
+        Assertions.assertEquals(todoList.seeAllTasks(), testTasks.toString());
+
+
+    }
 
 }
 
