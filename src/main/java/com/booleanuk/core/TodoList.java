@@ -3,7 +3,9 @@ package com.booleanuk.core;
 import javafx.util.Pair;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class TodoList {
     ArrayList<Pair<String, Boolean>> tasks = new ArrayList<>();
@@ -84,16 +86,19 @@ public class TodoList {
     }
 
 
-    public String listTasksAscendingOrder(){
-        System.out.println("Hei");
-        ArrayList<Pair<String, Boolean>> sorted;
-        sorted = (ArrayList<Pair<String, Boolean>>) tasks.clone();
-        List<> sortedList = sorted.stream().toList();
-        Collections.sort(sortedList);
-        for(Object t: sortedList){
+    public String listTasksAscendingOrder() {
+        List<Pair<String, Boolean>> sorted = tasks.stream()
+                .sorted(Comparator.comparing(Pair::getKey))
+                .toList();
+
+        for(Pair<String, Boolean> t: sorted){
             System.out.println(t);
         }
-        return sortedList.toString();
+
+        ArrayList<Pair<String, Boolean>> sortedArrayList = new ArrayList<>(sorted);
+        System.out.println(sortedArrayList.toString());
+        return sortedArrayList.toString();
+
     }
 }
 
