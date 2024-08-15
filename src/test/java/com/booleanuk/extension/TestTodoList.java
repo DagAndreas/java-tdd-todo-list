@@ -156,4 +156,34 @@ public class TestTodoList {
 
     }
 
+    @Test
+    public void testSeeAllIncompletedTasks(){
+        TodoList td = new TodoList();
+        td.addTask(0, "d");
+        td.addTask(1, "g"); // ex
+        td.addTask(2, "b");
+        td.addTask(3, "a");
+        td.addTask(4, "x"); // ex
+        td.addTask(5, "e"); // ex
+
+        td.markTaskById(0);
+        td.markTaskById(2);
+        td.markTaskById(3);
+
+        HashMap<Integer, Task> expectedResult = new HashMap<>();
+        expectedResult.put(1, new Task("g"));
+        expectedResult.put(4, new Task("x"));
+        expectedResult.put(5, new Task("e"));
+
+        HashMap<Integer, Task> resultMap = td.seeAllIncompletedTasks();
+        for(int i: resultMap.keySet()){
+            String resultString = resultMap.get(i).task;
+            String expectedString = expectedResult.get(i).task;
+
+            Assertions.assertEquals(resultString, expectedString);
+        }
+
+    }
+
+
 }
