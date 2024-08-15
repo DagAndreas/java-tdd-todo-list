@@ -34,4 +34,17 @@ public class TodoList {
         }
         return false;
     }
+
+    public boolean removeTask(String task){
+        for (int i = 0; i < tasks.size(); i++) {
+            Pair<String, Boolean> curTask = tasks.get(i);
+            String curTaskString = curTask.getKey();
+
+            if(curTaskString.equals(task)){
+                tasks.remove(i);
+                return true;
+            }
+        }
+        return false;
+    }
 }

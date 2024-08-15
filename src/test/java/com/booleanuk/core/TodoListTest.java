@@ -76,8 +76,10 @@ class TodoListTest {
         TodoList todolist = getTestingTodolist();
 
         Assertions.assertTrue(todolist.checkTaskExists("Buy groceries"));
-        todolist.removeTask("Buy grocereis");
+        Assertions.assertTrue(todolist.removeTask("Buy groceries"));
         Assertions.assertFalse(todolist.checkTaskExists("Buy groceries"));
+        Assertions.assertFalse(todolist.removeTask("Buy groceries"));
+
     }
 }
 
