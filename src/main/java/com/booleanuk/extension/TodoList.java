@@ -1,5 +1,9 @@
 package com.booleanuk.extension;
 
+import javafx.util.Pair;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class TodoList  {
@@ -12,5 +16,12 @@ public class TodoList  {
 
     public void removeTask(int id){
         tasks.remove(id);
+    }
+
+    public HashMap<Integer, Task> seeAllTasks(){
+        for(int i: tasks.keySet()){
+            System.out.println(tasks.get(i));
+        }
+        return tasks;
     }
 }
