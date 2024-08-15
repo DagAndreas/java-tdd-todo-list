@@ -14,5 +14,15 @@ public class TestTask {
     public void testSetNewTaskName(){
         Task task = new Task("Clean");
         Assertions.assertEquals(task.task, "Clean");
+        task.setNewTaskName("Clean up");
+        Assertions.assertEquals(task.task, "Clean up");
+        Assertions.assertNotEquals(task.task, "Clean");
+    }
+
+    @Test
+    public void testMark(){
+        Task task = new Task("Clean");
+
+        Assertions.assertFalse(task.isMarked());
     }
 }
