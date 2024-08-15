@@ -36,11 +36,23 @@ class TodoListTest {
     @Test
     public void testMarkTask(){
         TodoList todolist = getTestingTodolist();
+        String testString;
+        boolean expected;
 
-        String testString = "Buy groceries";
-        Assertions.assertTrue(todolist.tasks.contains(new Pair<>(testString, false)));
+        testString = "Buy groceries";
+
+        expected = false;
+        Assertions.assertTrue(todolist.tasks.contains(new Pair<>(testString, expected)));
         todolist.markTask(testString);
-        Assertions.assertTrue(todolist.tasks.contains(new Pair<>(testString, true)));
+        expected = true;
+        Assertions.assertTrue(todolist.tasks.contains(new Pair<>(testString, expected)));
+        todolist.markTask(testString);
+        expected = false;
+        Assertions.assertTrue(todolist.tasks.contains(new Pair<>(testString, expected)));
 
+        testString = "Wash car";
+        todolist.markTask(testString);
+        expected = true;
+        Assertions.assertTrue(todolist.tasks.contains(new Pair<>(testString, expected)));
     }
 }
