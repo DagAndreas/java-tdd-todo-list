@@ -20,11 +20,25 @@ public class TestTask {
     }
 
     @Test
-    public void testMark(){
+    public void testisMarked(){
         Task task = new Task("Clean");
 
         Assertions.assertFalse(task.isMarked());
         task.isMarked = true;
         Assertions.assertTrue(task.isMarked());
     }
+
+    @Test
+    public void testMark(){
+        Task task = new Task("Clean");
+
+        Assertions.assertFalse(task.isMarked);
+        Assertions.assertTrue(task.mark());
+        Assertions.assertTrue(task.isMarked);
+
+        task.mark();
+        Assertions.assertFalse(task.isMarked);
+    }
+
+
 }
