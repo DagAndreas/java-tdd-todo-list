@@ -186,4 +186,19 @@ public class TestTodoList {
     }
 
 
+    @Test
+    public void testSetTaskName(){
+        TodoList td = new TodoList();
+        td.addTask(0, "d");
+        td.addTask(1, "b");
+
+        td.setTaskName("Wash floor", 0);
+        td.setTaskname("Change covers", 1);
+
+        Assertions.assertEquals(td.getTask(0), "Wash floor");
+        Assertions.assertEquals(td.getTask(1), "Change covers");
+
+
+    }
+
 }
