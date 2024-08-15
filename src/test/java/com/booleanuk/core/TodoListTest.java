@@ -174,7 +174,7 @@ class TodoListTest {
         Assertions.assertEquals(todoList.listTasksDescendingOrder(), testTasks.toString());
 
         todoList.addTask("A nice glass of juice");
-        testTasks.add(-1, new Pair<>("A nice glass of juice", false));
+        testTasks.add(testTasks.size(), new Pair<>("A nice glass of juice", false));
         Assertions.assertEquals(todoList.listTasksDescendingOrder(), testTasks.toString());
     }
 

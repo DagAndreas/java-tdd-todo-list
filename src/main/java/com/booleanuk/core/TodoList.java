@@ -1,13 +1,21 @@
 package com.booleanuk.core;
 
 import javafx.util.Pair;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
-import java.util.stream.Collectors;
+
 
 public class TodoList {
+
+    public static void main(String[] args) {
+        LocalDate ld = LocalDate.now();
+        System.out.println(ld);
+    }
+
     ArrayList<Pair<String, Boolean>> tasks = new ArrayList<>();
 
     public void addTask(String task){
@@ -100,6 +108,23 @@ public class TodoList {
         return sortedArrayList.toString();
 
     }
+
+    public String listTasksDescendingOrder() {
+        List<Pair<String, Boolean>> sorted = tasks.stream()
+                .sorted(Comparator.comparing(Pair::getKey))
+                .toList()
+                .reversed();
+
+        for(Pair<String, Boolean> t: sorted){
+            System.out.println(t);
+        }
+
+        ArrayList<Pair<String, Boolean>> sortedArrayList = new ArrayList<>(sorted);
+        System.out.println(sortedArrayList.toString());
+        return sortedArrayList.toString();
+
+    }
+
 }
 
 
