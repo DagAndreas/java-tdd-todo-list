@@ -71,6 +71,14 @@ class TodoListTest {
         Assertions.assertFalse(todoList.checkTaskExists("Washcar"));
     }
 
+    @Test
+    public void checkRemoveTask(){
+        TodoList todolist = getTestingTodolist();
+
+        Assertions.assertTrue(todolist.checkTaskExists("Buy groceries"));
+        todolist.removeTask("Buy grocereis");
+        Assertions.assertFalse(todolist.checkTaskExists("Buy groceries"));
+    }
 }
 
 
