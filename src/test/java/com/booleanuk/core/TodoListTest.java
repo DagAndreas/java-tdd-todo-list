@@ -6,12 +6,6 @@ import javafx.util.Pair;
 
 
 class TodoListTest {
-    @Test
-    public void exampleTest() {
-        String hello = "Hello";
-        Assertions.assertEquals("Hello", hello);
-        Assertions.assertNotEquals("Goodbye", hello);
-    }
 
     public TodoList getTestingTodolist(){
         TodoList todolist = new TodoList();
@@ -81,6 +75,8 @@ class TodoListTest {
         Assertions.assertFalse(todolist.removeTask("Buy groceries"));
 
     }
+
+
 }
 
 
