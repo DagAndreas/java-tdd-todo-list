@@ -30,8 +30,18 @@ public class Task {
         return isMarked;
     }
 
+
+    public String returnDateString() {
+        return date.getDayOfMonth() + ", " + date.getMonth() + "-" + date.getYear();
+    }
+
     public LocalDateTime getDate(){
-        System.out.println(date.getDayOfMonth() + ", " + date.getMonth() + "-" + date.getYear());
+        System.out.println(returnDateString());
         return date;
+    }
+
+    @Override
+    public String toString(){
+        return "Task:" + task + "\t| status:" + isMarked + "\t| date: " + returnDateString();
     }
 }
