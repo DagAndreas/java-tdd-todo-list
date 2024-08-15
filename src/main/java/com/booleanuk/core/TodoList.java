@@ -47,4 +47,11 @@ public class TodoList {
         }
         return false;
     }
+
+    public String seeAllTasks(){
+        for (Pair<String, Boolean> t: tasks){
+            System.out.println(t);
+        }
+        return tasks.toString();
+    }
 }
