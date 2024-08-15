@@ -23,6 +23,15 @@ public class TodoList {
                 break;
             }
         }
+    }
 
+    public boolean checkTaskExists(String checkTask){
+        for (Pair<String, Boolean> task: tasks){
+            String taskString = task.getKey();
+            if(taskString.equals(checkTask)){
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -65,7 +65,10 @@ class TodoListTest {
 
 
         testString = "Wash car";
-        Assertions.assertTrue(todoList.checkTaskExists(testString), true);
+        Assertions.assertTrue(todoList.checkTaskExists(testString));
+
+        Assertions.assertFalse(todoList.checkTaskExists("No task here"));
+        Assertions.assertFalse(todoList.checkTaskExists("Washcar"));
     }
 
 }
