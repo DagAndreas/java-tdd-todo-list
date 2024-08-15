@@ -61,11 +61,11 @@ class TodoListTest {
     @Test
     public void testCheckTaskExists(){
         TodoList todoList = getTestingTodolist();
-        String testString;
 
+        Assertions.assertTrue(todoList.checkTaskExists("Buy groceries"));
+        Assertions.assertTrue(todoList.checkTaskExists("Take out the trash"));
+        Assertions.assertTrue(todoList.checkTaskExists("Wash car"));
 
-        testString = "Wash car";
-        Assertions.assertTrue(todoList.checkTaskExists(testString));
 
         Assertions.assertFalse(todoList.checkTaskExists("No task here"));
         Assertions.assertFalse(todoList.checkTaskExists("Washcar"));
