@@ -21,4 +21,9 @@ public class Task {
     public boolean isMarked(){
         return isMarked;
     }
+
+    public boolean mark(){
+        isMarked = !isMarked;
+        return isMarked;
+    }
 }
