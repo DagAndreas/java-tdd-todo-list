@@ -107,7 +107,7 @@ public class TestTodoList {
 
 
     @Test
-    public void listTasksDescOrder(){
+    public void testListTasksDescOrder(){
         TodoList td = new TodoList();
         td.addTask(0, "d");
         td.addTask(1, "g");
@@ -125,6 +125,35 @@ public class TestTodoList {
         for (int i = 0; i < expectedOrder.size(); i++) {
             Assertions.assertEquals(result.get(i).task, expectedOrder.get(i).task);
         }
+    }
+
+    @Test
+    public void testSeeAllCompletedTasks(){
+        TodoList td = new TodoList();
+        td.addTask(0, "d"); // m
+        td.addTask(1, "g");
+        td.addTask(2, "b"); // m
+        td.addTask(3, "a"); // m
+        td.addTask(4, "x");
+        td.addTask(5, "e");
+
+        td.markTaskById(0);
+        td.markTaskById(2);
+        td.markTaskById(3);
+
+        HashMap<Integer, Task> expectedResult = new HashMap<>();
+        expectedResult.put(0, new Task("d"));
+        expectedResult.put(2, new Task("b"));
+        expectedResult.put(3, new Task("a"));
+
+        HashMap<Integer, Task> resultMap = td.seeAllCompletedTasks();
+        for(int i: resultMap.keySet()){
+            String resultString = resultMap.get(i).task;
+            String expectedString = expectedResult.get(i).task;
+
+            Assertions.assertEquals(resultString, expectedString);
+        }
+
     }
 
 }
