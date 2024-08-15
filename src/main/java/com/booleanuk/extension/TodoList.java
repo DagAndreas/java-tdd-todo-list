@@ -50,6 +50,17 @@ public class TodoList  {
         return taskList;
     }
 
+    public ArrayList<Task> listTasksDescendingOrder(){
+        ArrayList<Task> taskList = new ArrayList<>(tasks.values());
+        Collections.sort(taskList);
+        Collections.reverse(taskList);
+
+        for (Task t: taskList){
+            System.out.println(t);
+        }
+        return taskList;
+    }
+
 
 
 
