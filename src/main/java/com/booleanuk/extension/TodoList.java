@@ -25,6 +25,31 @@ public class TodoList  {
     }
 
 
+    public HashMap<Integer, Task> seeAllCompletedTasks(){
+        HashMap<Integer, Task> newTaskMap = new HashMap<>();
+
+        for (int i: tasks.keySet()){
+            if(tasks.get(i).isMarked()){
+                newTaskMap.put(i, tasks.get(i));
+                System.out.println("Completed: " + tasks.get(i).task);
+            }
+        }
+        return newTaskMap;
+    }
+
+
+    public HashMap<Integer, Task> seeAllIncompletedTasks(){
+        HashMap<Integer, Task> newTaskMap = new HashMap<>();
+
+        for (int i: tasks.keySet()){
+            if(!tasks.get(i).isMarked()){
+                newTaskMap.put(i, tasks.get(i));
+                System.out.println("Incomplete: " + tasks.get(i).task);
+            }
+        }
+        return newTaskMap;
+    }
+
     public boolean markTaskById(int i){
         Task t = tasks.get(i);
         return t.mark();
@@ -36,6 +61,7 @@ public class TodoList  {
             return tasks.get(id).task;
 
         } catch (NullPointerException e){
+            System.out.println("Taskid_" + id + " does not exist");
             return null;
         }
     }
@@ -60,6 +86,7 @@ public class TodoList  {
         }
         return taskList;
     }
+
 
 
 
