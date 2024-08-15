@@ -36,7 +36,8 @@
 |             |                        | `getCreatedDate(int id)`              | user wants to see the date a task is created      | date is printed to console and returned                                        |
 | `Task`      | String task            |                                       |                                                   |                                                                                |
 |             | boolean isMarked       |                                       |                                                   |                                                                                |
-|             | LocalDate date         |                                       |                                                   |                                                                                |
+|             | LocalDateTime date     |                                       |                                                   |                                                                                |
 |             |                        | `setNewTaskName(String newName)`      | user wants to give a task a new name              | the task is updated                                                            |
 |             |                        | `getIsMarked()`                       | user wants to check if task is marked             | status is returned                                                             |
 |             |                        | `mark()`                              | user wants to mark a task                         | isMarked boolean is swapped                                                    |
+|             |                        | `getDate()`                           | user wants to see the date when task was created  | date is printed and returned                                                   |

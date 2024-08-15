@@ -2,6 +2,7 @@ package com.booleanuk.extension;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import java.time.LocalDateTime;
 
 public class TestTask {
     @Test
@@ -38,6 +39,15 @@ public class TestTask {
 
         task.mark();
         Assertions.assertFalse(task.isMarked);
+    }
+
+    @Test
+    public void testLocalDate(){
+        LocalDateTime ldt = LocalDateTime.now();
+        Task task = new Task("Clean");
+
+        // check if second is the same.
+        Assertions.assertEquals(task.getDate().getSecond(), ldt.getSecond());
     }
 
 
