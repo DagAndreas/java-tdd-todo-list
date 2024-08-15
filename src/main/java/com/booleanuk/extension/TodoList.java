@@ -87,6 +87,17 @@ public class TodoList  {
         return taskList;
     }
 
+    public void setTaskName(String name, int id){
+        try {
+            Task t = tasks.get(id);
+            t.setNewTaskName(name);
+        } catch (NullPointerException e){
+            System.out.println("No task found under id=" + id + ". Please try again.");
+        }
+    }
+
+
+
 
 
 

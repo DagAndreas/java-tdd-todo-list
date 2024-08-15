@@ -193,7 +193,7 @@ public class TestTodoList {
         td.addTask(1, "b");
 
         td.setTaskName("Wash floor", 0);
-        td.setTaskname("Change covers", 1);
+        td.setTaskName("Change covers", 1);
 
         Assertions.assertEquals(td.getTask(0), "Wash floor");
         Assertions.assertEquals(td.getTask(1), "Change covers");
