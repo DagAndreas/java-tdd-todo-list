@@ -88,6 +88,11 @@ class TodoListTest {
 
         Assertions.assertEquals(todoList.seeAllTasks(), testTasks.toString());
 
+        todoList.markTask("Wash car");
+        testTasks.set(2, new Pair<>("Wash car", true));
+        Assertions.assertEquals(todoList.seeAllTasks(), testTasks.toString());
+
+
 
     }
 
