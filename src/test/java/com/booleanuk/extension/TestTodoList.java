@@ -36,7 +36,7 @@ public class TestTodoList {
 
 
     @Test
-    public void TestseeAllTasks(){
+    public void testSeeAllTasks(){
         TodoList td = new TodoList();
         td.addTask(0, "Clean");
         td.addTask(1, "Wash car");
@@ -44,12 +44,28 @@ public class TestTodoList {
 
         ArrayList<String> expectedResults = new ArrayList<>();
         expectedResults.add("Clean"); expectedResults.add("Clean again"); expectedResults.add("Wash car");
-
+        int correctCounter = 0;
         HashMap<Integer, Task> gottenResults = td.seeAllTasks();
         for (Task task: gottenResults.values()){
             boolean containedInExpectedResults = expectedResults.contains(task.task);
             Assertions.assertTrue(containedInExpectedResults);
+            correctCounter++;
         }
 
+        Assertions.assertEquals(correctCounter, expectedResults.size());
     }
+
+    @Test
+    public void testMarkTaskById(){
+        TodoList td = new TodoList();
+        td.addTask(0, "Clean");
+        td.addTask(1, "Wash car");
+        td.addTask(2, "Clean again");
+
+
+        Assertions.assertFalse(td.tasks.get(0).isMarked);
+        td.markTaskById(0);
+        Assertions.assertTrue(td.tasks.get(0).isMarked);
+    }
+
 }
