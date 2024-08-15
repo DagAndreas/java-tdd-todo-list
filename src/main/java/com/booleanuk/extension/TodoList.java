@@ -24,4 +24,10 @@ public class TodoList  {
         }
         return tasks;
     }
+
+
+    public boolean markTaskById(int i){
+        Task t = tasks.get(i);
+        return t.mark();
+    }
 }
