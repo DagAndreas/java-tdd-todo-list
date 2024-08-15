@@ -2,6 +2,8 @@ package com.booleanuk.core;
 
 import javafx.util.Pair;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class TodoList {
     ArrayList<Pair<String, Boolean>> tasks = new ArrayList<>();
@@ -79,6 +81,19 @@ public class TodoList {
             }
         }
         return notCompletedList.toString();
+    }
+
+
+    public String listTasksAscendingOrder(){
+        System.out.println("Hei");
+        ArrayList<Pair<String, Boolean>> sorted;
+        sorted = (ArrayList<Pair<String, Boolean>>) tasks.clone();
+        List<> sortedList = sorted.stream().toList();
+        Collections.sort(sortedList);
+        for(Object t: sortedList){
+            System.out.println(t);
+        }
+        return sortedList.toString();
     }
 }
 

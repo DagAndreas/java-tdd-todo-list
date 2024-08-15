@@ -135,9 +135,15 @@ class TodoListTest {
 
     @Test
     public void testListTasksAscendingOrder(){
-        TodoList todoList = getTestingTodolist();
+        TodoList todoList = new TodoList();
+        todoList.addTask("Hang out the birthday flag");
+        todoList.addTask("Buy groceries");
+        todoList.addTask("Wash car");
+        todoList.addTask("Take out the trash");
+
         ArrayList<Pair<String, Boolean>> testTasks = new ArrayList<>();
         testTasks.add(new Pair<>("Buy groceries", false));
+        testTasks.add(new Pair<>("Hang out the birthday flag", false));
         testTasks.add(new Pair<>("Take out the trash", false));
         testTasks.add(new Pair<>("Wash car", false));
 
