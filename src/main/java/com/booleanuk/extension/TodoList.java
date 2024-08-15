@@ -1,6 +1,8 @@
 package com.booleanuk.extension;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 public class TodoList  {
@@ -29,10 +31,27 @@ public class TodoList  {
     }
 
 
-    // tested by TestTask
-    public LocalDateTime getCreatedDate(int i){
-        return tasks.get(i).getDate();
+    public String getTask(int id){
+        try{
+            return tasks.get(id).task;
+
+        } catch (NullPointerException e){
+            return null;
+        }
     }
+
+    public ArrayList<Task> listTasksAscendingOrder(){
+        ArrayList<Task> taskList = new ArrayList<>(tasks.values());
+        Collections.sort(taskList);
+
+        for (Task t: taskList){
+            System.out.println(t);
+        }
+        return taskList;
+    }
+
+
+
 
 
 }
