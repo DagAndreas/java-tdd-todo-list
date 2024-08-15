@@ -39,7 +39,7 @@ class TodoListTest {
 
         String testString = "Buy groceries";
         Assertions.assertTrue(todolist.tasks.contains(new Pair<>(testString, false)));
-        todolist.mark(testString);
+        todolist.markTask(testString);
         Assertions.assertTrue(todolist.tasks.contains(new Pair<>(testString, true)));
 
     }
