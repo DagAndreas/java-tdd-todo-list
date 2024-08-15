@@ -55,4 +55,49 @@ class TodoListTest {
         expected = true;
         Assertions.assertTrue(todolist.tasks.contains(new Pair<>(testString, expected)));
     }
+
+
+
+    @Test
+    public void testCheckTaskExists(){
+        TodoList todoList = getTestingTodolist();
+        String testString;
+
+
+        testString = "Wash car";
+        Assertions.assertTrue(todoList.checkTaskExists(testString), true);
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
