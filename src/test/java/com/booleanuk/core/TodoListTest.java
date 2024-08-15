@@ -111,6 +111,20 @@ class TodoListTest {
         Assertions.assertEquals(todoList.seeAllCompletedTasks(), testTasks.toString());
 
     }
+
+    @Test
+    public void testSeeAllIncompleteTasks(){
+
+        TodoList todoList = getTestingTodolist();
+        ArrayList<Pair<String, Boolean>> testTasks = new ArrayList<>();
+        testTasks.add(new Pair<>("Buy groceries", false));
+        testTasks.add(new Pair<>("Take out the trash", false));
+        testTasks.add(new Pair<>("Wash car", false));
+
+
+        Assertions.assertEquals(todoList.seeAllIncompletedTasks(), testTasks.toString());
+    }
+
 }
 
 
