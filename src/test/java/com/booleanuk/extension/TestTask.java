@@ -24,5 +24,7 @@ public class TestTask {
         Task task = new Task("Clean");
 
         Assertions.assertFalse(task.isMarked());
+        task.isMarked = true;
+        Assertions.assertTrue(task.isMarked());
     }
 }

@@ -35,7 +35,6 @@
 |             |                        | `markTaskById(int id)`                | user wants to mark a task by id                   | task is updated if exists                                                      |
 |             |                        | `getCreatedDate(int id)`              | user wants to see the date a task is created      | date is printed to console and returned                                        |
 | `Task`      | String task            |                                       |                                                   |                                                                                |
-|             | int uniqueId           |                                       |                                                   |                                                                                |
 |             | boolean isMarked       |                                       |                                                   |                                                                                |
 |             | LocalDate date         |                                       |                                                   |                                                                                |
 |             |                        | `setNewTaskName(String newName)`      | user wants to give a task a new name              | the task is updated                                                            |

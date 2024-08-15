@@ -16,4 +16,9 @@ public class Task {
     public void setNewTaskName(String task){
         this.task = task;
     }
+
+
+    public boolean isMarked(){
+        return isMarked;
+    }
 }
