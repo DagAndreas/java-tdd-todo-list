@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.concurrent.TimeUnit;
 
-public class Task {
+public class Task implements Comparable<Task>{
     String task;
     boolean isMarked;
     LocalDateTime date;
@@ -43,5 +43,10 @@ public class Task {
     @Override
     public String toString(){
         return "Task:" + task + "\t| status:" + isMarked + "\t| date: " + returnDateString();
+    }
+
+    @Override
+    public int compareTo(Task task) {
+        return this.task.compareTo(task.task);
     }
 }

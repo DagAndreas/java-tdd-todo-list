@@ -1,9 +1,6 @@
 package com.booleanuk.extension;
 
-import javafx.util.Pair;
-
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.time.LocalDateTime;
 import java.util.HashMap;
 
 public class TodoList  {
@@ -30,4 +27,12 @@ public class TodoList  {
         Task t = tasks.get(i);
         return t.mark();
     }
+
+
+    // tested by TestTask
+    public LocalDateTime getCreatedDate(int i){
+        return tasks.get(i).getDate();
+    }
+
+
 }

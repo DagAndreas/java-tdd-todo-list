@@ -122,7 +122,6 @@ public class TodoList {
         ArrayList<Pair<String, Boolean>> sortedArrayList = new ArrayList<>(sorted);
         System.out.println(sortedArrayList.toString());
         return sortedArrayList.toString();
-
     }
 
 }
