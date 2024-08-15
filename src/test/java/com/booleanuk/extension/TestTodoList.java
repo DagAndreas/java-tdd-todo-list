@@ -10,8 +10,7 @@ public class TestTodoList {
         TodoList td = new TodoList();
         Task testTask = new Task("Clean");
 
-        td.add(0, testTask);
-        Assertions.assertEquals(td.tasks[0], testTask);
-
+        td.add(0, "Clean");
+        Assertions.assertEquals(td.tasks.get(0).task, "Clean");
     }
 }
