@@ -2,6 +2,8 @@ package com.booleanuk.core;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import javafx.util.Pair;
+
 
 class TodoListTest {
     @Test
@@ -9,5 +11,13 @@ class TodoListTest {
         String hello = "Hello";
         Assertions.assertEquals("Hello", hello);
         Assertions.assertNotEquals("Goodbye", hello);
+    }
+
+    @Test
+    public void testAddTask(){
+        TodoList todolist = new TodoList();
+
+        todolist.addTask("Buy groceries");
+        Assertions.assertTrue(todolist.tasks.contains(new Pair<>("Buy groceries", false)));
     }
 }
