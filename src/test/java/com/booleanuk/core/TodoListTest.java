@@ -91,11 +91,22 @@ class TodoListTest {
         todoList.markTask("Wash car");
         testTasks.set(2, new Pair<>("Wash car", true));
         Assertions.assertEquals(todoList.seeAllTasks(), testTasks.toString());
-
-
-
     }
 
+
+    @Test
+    public void testSeeAllCompleteTasks(){
+
+        TodoList todoList = getTestingTodolist();
+        ArrayList<Pair<String, Boolean>> testTasks = new ArrayList<>();
+        testTasks.add(new Pair<>("Buy groceries", true));
+        testTasks.add(new Pair<>("Wash car", true));
+
+        todoList.markTask("Buy groceries");
+        todoList.markTask("Wash car");
+
+        Assertions.assertEquals(todoList.seeAllCompletedTasks(), testTasks.toString());
+    }
 }
 
 
