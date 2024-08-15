@@ -54,4 +54,17 @@ public class TodoList {
         }
         return tasks.toString();
     }
+
+    public String seeAllCompletedTasks(){
+        ArrayList<Pair<String, Boolean>> completedList = new ArrayList<>();
+
+        for(Pair<String, Boolean> t: tasks){
+            boolean completed = t.getValue();
+            if (completed){
+                completedList.add(t);
+                System.out.println(t);
+            }
+        }
+        return completedList.toString();
+    }
 }

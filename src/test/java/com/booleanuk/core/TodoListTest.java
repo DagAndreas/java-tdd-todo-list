@@ -106,6 +106,10 @@ class TodoListTest {
         todoList.markTask("Wash car");
 
         Assertions.assertEquals(todoList.seeAllCompletedTasks(), testTasks.toString());
+        todoList.markTask("Wash car");
+        testTasks.remove(new Pair<>("Wash car", true));
+        Assertions.assertEquals(todoList.seeAllCompletedTasks(), testTasks.toString());
+
     }
 }
 
