@@ -197,8 +197,5 @@ public class TestTodoList {
 
         Assertions.assertEquals(td.getTask(0), "Wash floor");
         Assertions.assertEquals(td.getTask(1), "Change covers");
-
-
     }
-
 }
