@@ -9,5 +9,6 @@ public class TodoList {
     public void addTask(String task){
         Pair<String, Boolean> newTask = new Pair<>(task, false);
         tasks.add(newTask);
+        //
     }
 }
