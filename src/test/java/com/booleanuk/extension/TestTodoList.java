@@ -69,6 +69,21 @@ public class TestTodoList {
     }
 
 
+    @Test
+    public void testGetTaskById(){
+        TodoList td = new TodoList();
+        td.addTask(0, "Clean");
+        td.addTask(1, "Wash car");
+        td.addTask(2, "Clean again");
+
+        Assertions.assertEquals(td.getTask(0), "Clean");
+        Assertions.assertEquals(td.getTask(1), "Wash car");
+        Assertions.assertEquals(td.getTask(2), "Clean again");
+        Assertions.assertNotEquals(td.getTask(4), "Clean again");
+
+
+
+    }
 
 
 }
