@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import javafx.util.Pair;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 class TodoListTest {
@@ -123,6 +124,26 @@ class TodoListTest {
 
 
         Assertions.assertEquals(todoList.seeAllIncompletedTasks(), testTasks.toString());
+        todoList.markTask("Buy groceries");
+
+        testTasks = new ArrayList<>();
+        testTasks.add(new Pair<>("Take out the trash", false));
+        testTasks.add(new Pair<>("Wash car", false));
+        Assertions.assertEquals(todoList.seeAllIncompletedTasks(), testTasks.toString());
+    }
+
+
+    @Test
+    public void testListTasksAscendingOrder(){
+        TodoList todoList = getTestingTodolist();
+        ArrayList<Pair<String, Boolean>> testTasks = new ArrayList<>();
+        testTasks.add(new Pair<>("Buy groceries", false));
+        testTasks.add(new Pair<>("Take out the trash", false));
+        testTasks.add(new Pair<>("Wash car", false));
+
+        Assertions.assertEquals(todoList.listTasksAscendingOrder(), testTasks.toString());
+
+
     }
 
 }
