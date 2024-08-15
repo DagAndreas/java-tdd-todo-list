@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class TestTodoList {
@@ -101,10 +102,29 @@ public class TestTodoList {
         ArrayList<Task> result = td.listTasksAscendingOrder();
         for (int i = 0; i < expectedOrder.size(); i++) {
             Assertions.assertEquals(result.get(i).task, expectedOrder.get(i).task);
-
         }
+    }
 
 
+    @Test
+    public void listTasksDescOrder(){
+        TodoList td = new TodoList();
+        td.addTask(0, "d");
+        td.addTask(1, "g");
+        td.addTask(2, "b");
+        td.addTask(3, "a");
+        td.addTask(4, "x");
+        td.addTask(5, "e");
+
+        ArrayList<Task> expectedOrder = new ArrayList<>();
+        String[] order = {"x", "g", "d", "b", "e", "a" };
+        for (String s: order){
+            expectedOrder.add(new Task(s));
+        }
+        ArrayList<Task> result = td.listTasksDescendingOrder();
+        for (int i = 0; i < expectedOrder.size(); i++) {
+            Assertions.assertEquals(result.get(i).task, expectedOrder.get(i).task);
+        }
     }
 
 }
