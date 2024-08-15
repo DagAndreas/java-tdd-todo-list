@@ -13,13 +13,19 @@ class TodoListTest {
         Assertions.assertNotEquals("Goodbye", hello);
     }
 
-    @Test
-    public void testAddTask(){
+    public TodoList getTestingTodolist(){
         TodoList todolist = new TodoList();
 
         todolist.addTask("Buy groceries");
         todolist.addTask("Take out the trash");
         todolist.addTask("Wash car");
+        return todolist;
+    }
+
+    @Test
+    public void testAddTask(){
+        TodoList todolist = getTestingTodolist();
+
         Assertions.assertTrue(todolist.tasks.contains(new Pair<>("Buy groceries", false)));
         Assertions.assertTrue(todolist.tasks.contains(new Pair<>("Take out the trash", false)));
         Assertions.assertFalse(todolist.tasks.contains(new Pair<>("Take in the trash", false)));
@@ -27,7 +33,14 @@ class TodoListTest {
         Assertions.assertFalse(todolist.tasks.contains(new Pair<>("Wash car again", false)));
     }
 
+    @Test
     public void testMarkTask(){
+        TodoList todolist = getTestingTodolist();
+
+        String testString = "Buy groceries";
+        Assertions.assertTrue(todolist.tasks.contains(new Pair<>(testString, false)));
+        todolist.mark(testString);
+        Assertions.assertTrue(todolist.tasks.contains(new Pair<>(testString, true)));
 
     }
 }
